@@ -4,14 +4,14 @@ Walk-through of a set of simple nginx configurations under Kubernetes. This is b
 ### Clone the example repo
 
 ```
-$ git clone https://github.com/craig-willis/kubernetes-nginx-example.git
+git clone https://github.com/craig-willis/kubernetes-nginx-example.git
 ```
 
 ### Start local Kubernetes cluster and download kubectl
 
 If you don't have it already, run the provided shell script.
 ```
-$ ./kube-up-local.sh
+./kube-up-local.sh
 ```
 
 ### Pod Example
@@ -19,9 +19,9 @@ $ ./kube-up-local.sh
 This example starts pod with a single nginx container:
 
 ```
-$ kubectl create -f nginx-pod.yaml
+kubectl create -f nginx-pod.yaml
  
-$ kubectl get pods
+kubectl get pods
 NAME                   READY     STATUS    RESTARTS   AGE
 k8s-master-127.0.0.1   3/3       Running   0          48m
 nginx                  0/1       Running   0          8s
@@ -43,19 +43,19 @@ kubectl delete pod nginx
 This example creates a replication controller that manages two nginx containers. 
 
 ```
-$ kubectl create -f nginx-rc.yaml
+kubectl create -f nginx-rc.yaml
 ```
  
 List the replication controller using kubectl:
 ```
-$ kubectl get rc
+kubectl get rc
 CONTROLLER         CONTAINER(S)   IMAGE(S)   SELECTOR    REPLICAS   AGE
 nginx-controller   nginx          nginx      app=nginx   2          2m
 ```
  
 List the pods/containers using kubectl:
 ```
-$ kubectl get pods
+kubectl get pods
 NAME                     READY     STATUS              RESTARTS   AGE
 k8s-master-127.0.0.1     3/3       Running             0          1h
 nginx-controller-lu0ov   0/1       ContainerCreating   0          2s
@@ -64,13 +64,13 @@ nginx-controller-rvpru   0/1       ContainerCreating   0          2s
 
 You can again access each nginx container via it's assigned IP:
 ```
-$ curl http://$(kubectl get pod <pod name> -o go-template={{.status.podIP}})
+curl http://$(kubectl get pod <pod name> -o go-template={{.status.podIP}})
 ```
 
 While you can delete the replication controller (which will delete the running pods/containers), don't do it now since we need the replication controller running for the service.
 
 ```
-$ kubectl delete rc nginx-controller 
+kubectl delete rc nginx-controller 
 ```
  
 ### Service Example
@@ -78,12 +78,12 @@ $ kubectl delete rc nginx-controller
 This example assumes that you have a running replication controller, as above. 
  
 ```
-$ kubectl create -f nginx-service.yaml 
+kubectl create -f nginx-service.yaml 
 ```
  
 List the services using kubectl:
 ```
-$ kubectl get services
+kubectl get services
 NAME            CLUSTER_IP   EXTERNAL_IP   PORT(S)    SELECTOR    AGE
 kubernetes      10.0.0.1     <none>        443/TCP    <none>      53m
 nginx-service   10.0.0.245   <none>        8000/TCP   app=nginx   1m
@@ -91,7 +91,7 @@ nginx-service   10.0.0.245   <none>        8000/TCP   app=nginx   1m
  
 List the pods using kubectl:
 ```
-$ kubectl get pods
+kubectl get pods
 NAME                     READY     STATUS    RESTARTS   AGE
 k8s-master-127.0.0.1     3/3       Running   0          1h
 nginx-controller-lu0ov   1/1       Running   0          7m
@@ -100,14 +100,14 @@ nginx-controller-rvpru   1/1       Running   0          7m
  
 Now you can access the service endpoint using curl:
 ```
-$ export SERVICE_IP=$(kubectl get service nginx-service -o go-template={{.spec.clusterIP}})
-$ export SERVICE_PORT=$(kubectl get service nginx-service -o go-template'={{(index .spec.ports 0).port}}')
-$ curl http://${SERVICE_IP}:${SERVICE_PORT}
+export SERVICE_IP=$(kubectl get service nginx-service -o go-template={{.spec.clusterIP}})
+export SERVICE_PORT=$(kubectl get service nginx-service -o go-template'={{(index .spec.ports 0).port}}')
+curl http://${SERVICE_IP}:${SERVICE_PORT}
 ```
  
 Deleting the service only deletes the service, not the replication controller:
 ```
-$ kubectl delete service nginx-service 
+kubectl delete service nginx-service 
 ```
  
 ### Deployment Example
