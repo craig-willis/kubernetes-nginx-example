@@ -1,19 +1,20 @@
-Walk-through of a set of simple nginx configurations under Kubernetes. This is basically the same as the Kubernetes 101 and 201 examples.
+Walk-through of a set of simple nginx configurations under Kubernetes. This is basically the same as the Kubernetes [101](http://kubernetes.io/v1.1/docs/user-guide/walkthrough/README.html) and [201](http://kubernetes.io/v1.1/docs/user-guide/walkthrough/k8s201.html) examples.
 
-# Clone the example repo
+
+### Clone the example repo
 
 ```
 $ git clone https://github.com/craig-willis/kubernetes-nginx-example.git
 ```
 
-# Start local Kubernetes cluster and download kubectl
+### Start local Kubernetes cluster and download kubectl
 
 If you don't have it already, run the provided shell script.
 ```
 $ ./kube-up-local.sh
 ```
 
-# Pod Example
+### Pod Example
 
 This example starts pod with a single nginx container:
 
@@ -37,7 +38,7 @@ kubectl delete pod nginx
 ```
 
 
-# Replication Controller Example
+### Replication Controller Example
 
 This example creates a replication controller that manages two nginx containers. 
 
@@ -72,7 +73,7 @@ While you can delete the replication controller (which will delete the running p
 $ kubectl delete rc nginx-controller 
 ```
  
-# Service Example
+### Service Example
 
 This example assumes that you have a running replication controller, as above. 
  
@@ -109,7 +110,7 @@ Deleting the service only deletes the service, not the replication controller:
 $ kubectl delete service nginx-service 
 ```
  
-# Deployment Example
+### Deployment Example
 
 Can't seem to get these working.  Apparently deployments are part of a v1beta API and must be enabled using extensions.
 http://kubernetes.io/v1.1/docs/user-guide/deployments.html# kubernetes-nginx-example
