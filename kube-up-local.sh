@@ -19,7 +19,7 @@ docker run \
     --privileged=true \
     -d \
     gcr.io/google_containers/hyperkube:v$K8_VERSION \
-    /hyperkube kubelet --containerized --hostname-override="127.0.0.1" --address="0.0.0.0" --api-servers=http://localhost:8080 --config=/etc/kubernetes/manifests --runtime-config=extensions/v1beta1/deployments=true
+    /hyperkube kubelet --containerized --hostname-override="127.0.0.1" --address="0.0.0.0" --api-servers=http://localhost:8080 --config=/etc/kubernetes/manifests 
 
 docker run -d --net=host --privileged gcr.io/google_containers/hyperkube:v$K8_VERSION /hyperkube proxy --master=http://127.0.0.1:8080 --v=2
 
