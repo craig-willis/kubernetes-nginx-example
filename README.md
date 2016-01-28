@@ -110,7 +110,33 @@ Deleting the service only deletes the service, not the replication controller:
 kubectl delete service nginx-service 
 ```
  
-### Deployment Example
 
-Can't seem to get these working.  Apparently deployments are part of a v1beta API and must be enabled using extensions.
-http://kubernetes.io/v1.1/docs/user-guide/deployments.html# kubernetes-nginx-example
+### NFS Example
+
+Create sample export filesystem and data:
+```
+mkdir /data
+echo "Test" >> /data/index.html
+chmod a+r /data
+chmod a+r /data/index.html
+```
+
+Export the filesystem via nfs:
+```
+sudo vi /etc/exports
+/data *
+sudo servicectl start nfsd
+```
+Set the IP address of the docker0 interface in nfs-pv.yaml. Create the volumes and nginx pods:
+```
+kubectl create -f nfs-pv.yml
+kubectl create -f nfs-pvc.yml
+kubectl create -f nginx-pod-nfs.yml
+```
+
+Test your nginx:
+```
+curl `kubectl get pod nginx-nfs -o go-template="{{.status.podIP}}"`
+Test
+```
+
