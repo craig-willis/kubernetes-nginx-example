@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: cinder01
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle    
+  cinder:
+    volumeID: 016af9cc-4530-4422-9eb8-95e1df993e62
+    fsType: ext4

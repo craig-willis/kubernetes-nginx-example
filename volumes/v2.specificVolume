@@ -1,0 +1,47 @@
+{
+    "volume": {
+        "attachments": [
+            {
+                "attachment_id": "0c6eff6c-e324-4bc5-a3a2-9a5659e9c606",
+                "device": "/dev/vdb",
+                "host_name": null,
+                "id": "016af9cc-4530-4422-9eb8-95e1df993e62",
+                "server_id": "d74f17e3-db80-4bcc-bc67-c033a97682bb",
+                "volume_id": "016af9cc-4530-4422-9eb8-95e1df993e62"
+            }
+        ],
+        "availability_zone": "nova",
+        "bootable": "false",
+        "consistencygroup_id": null,
+        "created_at": "2016-02-20T14:17:59.000000",
+        "description": null,
+        "encrypted": false,
+        "id": "016af9cc-4530-4422-9eb8-95e1df993e62",
+        "links": [
+            {
+                "href": "http://nebula.ncsa.illinois.edu:8776/v2/3836c0d58e3349b28fc740e33a58a7e3/volumes/016af9cc-4530-4422-9eb8-95e1df993e62",
+                "rel": "self"
+            },
+            {
+                "href": "http://nebula.ncsa.illinois.edu:8776/3836c0d58e3349b28fc740e33a58a7e3/volumes/016af9cc-4530-4422-9eb8-95e1df993e62",
+                "rel": "bookmark"
+            }
+        ],
+        "metadata": {
+            "attached_mode": "rw",
+            "readonly": "False"
+        },
+        "multiattach": false,
+        "name": "willis8-vol-test",
+        "os-vol-tenant-attr:tenant_id": "3836c0d58e3349b28fc740e33a58a7e3",
+        "os-volume-replication:driver_data": null,
+        "os-volume-replication:extended_status": null,
+        "replication_status": "disabled",
+        "size": 10,
+        "snapshot_id": null,
+        "source_volid": null,
+        "status": "in-use",
+        "user_id": "75ea29a776974474853dae357543bf3b",
+        "volume_type": null
+    }
+}
