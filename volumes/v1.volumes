@@ -1,0 +1,193 @@
+{
+    "volumes": [
+        {
+            "attachments": [
+                {
+                    "attachment_id": "0c6eff6c-e324-4bc5-a3a2-9a5659e9c606",
+                    "device": "/dev/vdb",
+                    "host_name": null,
+                    "id": "016af9cc-4530-4422-9eb8-95e1df993e62",
+                    "server_id": "d74f17e3-db80-4bcc-bc67-c033a97682bb",
+                    "volume_id": "016af9cc-4530-4422-9eb8-95e1df993e62"
+                }
+            ],
+            "availability_zone": "nova",
+            "bootable": "false",
+            "created_at": "2016-02-20T14:17:59.000000",
+            "display_description": null,
+            "display_name": "willis8-vol-test",
+            "encrypted": false,
+            "id": "016af9cc-4530-4422-9eb8-95e1df993e62",
+            "metadata": {
+                "attached_mode": "rw",
+                "readonly": "False"
+            },
+            "multiattach": "false",
+            "size": 10,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "in-use",
+            "volume_type": null
+        },
+        {
+            "attachments": [],
+            "availability_zone": "nova",
+            "bootable": "false",
+            "created_at": "2016-02-19T21:45:39.000000",
+            "display_description": null,
+            "display_name": "k8-cinder-test",
+            "encrypted": false,
+            "id": "b53d7639-e208-4427-b974-80e12790e1c5",
+            "metadata": {
+                "readonly": "False"
+            },
+            "multiattach": "false",
+            "size": 50,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "available",
+            "volume_type": null
+        },
+        {
+            "attachments": [
+                {
+                    "attachment_id": "6373aa40-dfef-4f5c-adb4-4b4f7e308b18",
+                    "device": "/dev/vdb",
+                    "host_name": null,
+                    "id": "a59d2969-ec7c-4c2d-a563-fe314655c591",
+                    "server_id": "e8bbb11f-fb9b-4edb-a718-9baf495af825",
+                    "volume_id": "a59d2969-ec7c-4c2d-a563-fe314655c591"
+                }
+            ],
+            "availability_zone": "nova",
+            "bootable": "false",
+            "created_at": "2016-01-28T14:54:56.000000",
+            "display_description": "kubernetes cluster-wide NFS access",
+            "display_name": "k8-nfs-1",
+            "encrypted": false,
+            "id": "a59d2969-ec7c-4c2d-a563-fe314655c591",
+            "metadata": {
+                "attached_mode": "rw",
+                "readonly": "False"
+            },
+            "multiattach": "false",
+            "size": 1000,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "available",
+            "volume_type": null
+        },
+        {
+            "attachments": [],
+            "availability_zone": "nova",
+            "bootable": "true",
+            "created_at": "2016-01-11T21:51:34.000000",
+            "display_description": null,
+            "display_name": null,
+            "encrypted": false,
+            "id": "b12f129b-4fbe-43ca-993f-4baab90105e2",
+            "metadata": {
+                "readonly": "False"
+            },
+            "multiattach": "false",
+            "size": 80,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "available",
+            "volume_type": null
+        },
+        {
+            "attachments": [],
+            "availability_zone": "nova",
+            "bootable": "true",
+            "created_at": "2016-01-11T21:23:40.000000",
+            "display_description": null,
+            "display_name": null,
+            "encrypted": false,
+            "id": "9eb24710-13a3-48b4-b95a-9fc76e177367",
+            "metadata": {
+                "readonly": "False"
+            },
+            "multiattach": "false",
+            "size": 80,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "available",
+            "volume_type": null
+        },
+        {
+            "attachments": [],
+            "availability_zone": "nova",
+            "bootable": "true",
+            "created_at": "2016-01-11T21:11:11.000000",
+            "display_description": null,
+            "display_name": null,
+            "encrypted": false,
+            "id": "6849a65b-0b13-441c-bcd7-1b858373a5e5",
+            "metadata": {
+                "readonly": "False"
+            },
+            "multiattach": "false",
+            "size": 80,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "available",
+            "volume_type": null
+        },
+        {
+            "attachments": [],
+            "availability_zone": "nova",
+            "bootable": "true",
+            "created_at": "2015-12-30T00:01:09.000000",
+            "display_description": null,
+            "display_name": null,
+            "encrypted": false,
+            "id": "b47ead9b-2049-4576-bf59-58de3f2b38b8",
+            "metadata": {
+                "readonly": "False"
+            },
+            "multiattach": "false",
+            "size": 80,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "available",
+            "volume_type": null
+        },
+        {
+            "attachments": [],
+            "availability_zone": "nova",
+            "bootable": "false",
+            "created_at": "2015-10-17T17:24:41.000000",
+            "display_description": "IRODS",
+            "display_name": "IRODS",
+            "encrypted": false,
+            "id": "c115f67b-15f3-4fb5-bc98-4fc8db5d1c80",
+            "metadata": {},
+            "multiattach": "false",
+            "size": 60,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "available",
+            "volume_type": null
+        },
+        {
+            "attachments": [],
+            "availability_zone": "nova",
+            "bootable": "false",
+            "created_at": "2015-10-06T15:26:48.000000",
+            "display_description": null,
+            "display_name": "ISLMigrationVols",
+            "encrypted": false,
+            "id": "7935509a-9393-495e-b10b-35ba363c3809",
+            "metadata": {
+                "readonly": "False"
+            },
+            "multiattach": "false",
+            "size": 1000,
+            "snapshot_id": null,
+            "source_volid": null,
+            "status": "available",
+            "volume_type": null
+        }
+    ]
+}
